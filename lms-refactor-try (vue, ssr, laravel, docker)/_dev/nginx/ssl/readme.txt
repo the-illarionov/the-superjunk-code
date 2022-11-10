@@ -1,0 +1,1 @@
+if you dont have mkcert installed, but still want to implement https you have to place here 2 files. ANd dont forget about authorizing local CA (links)

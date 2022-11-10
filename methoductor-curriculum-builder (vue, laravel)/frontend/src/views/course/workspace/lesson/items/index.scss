@@ -1,0 +1,50 @@
+.header {
+	padding-right: 30px;
+	margin-bottom: .25rem;
+}
+
+.lesson__section {
+	margin-bottom: 3rem;
+}
+
+.lesson__section,
+.lesson__step,
+.lesson__skill {
+	transition: opacity .5s;
+}
+
+.workspace__lesson.highlighted .lesson__section {
+	opacity: 0.25;
+
+	&.highlighted {
+		opacity: 1;
+	}
+}
+
+
+
+.lesson__step {
+	margin-bottom: 2rem;
+}
+
+.workspace__lesson.highlighted .lesson__step {
+	opacity: 0.25;
+
+	&.highlighted {
+		opacity: 1;
+	}
+}
+
+
+
+.lesson__skill {
+	margin-right: .5rem;
+}
+
+.workspace__lesson.highlighted .lesson__skill {
+	opacity: 0.25;
+
+	&.highlighted {
+		opacity: 1;
+	}
+}

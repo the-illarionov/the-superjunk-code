@@ -1,0 +1,43 @@
+.logo-wrap,
+.editable-badge,
+footer{
+    display: none;
+}
+.CodeMirror-guttermarker-subtle {
+  font-size: 20px!important;
+}
+.CodeMirror-simplescroll {
+    padding: 10px;
+}
+.CodeMirror-scroll {
+    overflow: auto!important;
+}
+#embed-nav {
+  display: none;
+}
+#output .CodeMirror-linenumber {
+    color: #fff;
+    font-size: 18px;
+}
+#output pre {
+    font-size: 18px;
+}
+
+#output {
+  height: 100%;
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#result-box {
+  display: block !important;
+  height: 100% !important;
+  width: 50% !important;
+}
+
+#html-box, #css-box {
+  border: 1px #fff solid;
+  display: block !important;
+  height: 50% !important;
+  width: 50% !important;
+}

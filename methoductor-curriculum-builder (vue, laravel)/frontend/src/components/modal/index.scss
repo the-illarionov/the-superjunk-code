@@ -1,0 +1,131 @@
+@import '@/assets/scss/variables';
+.modal-container {
+	z-index: 1000;
+	&.absolute {
+		position: absolute;
+		left: 0; right: 0;
+		bottom: 100%;
+		cursor: default;
+	}
+
+	&.fixed {
+		position: fixed; 
+		left: 0; top: 0; right: 0; bottom: 0;
+		z-index: 1000;
+		padding: 80px;
+		overflow-y: auto;
+
+		&.small {
+			padding-left: 300px;
+			padding-right: 300px;
+		}
+	}
+	
+	.tooltip, .tooltiptime {
+		background: #fff;
+		padding: 1rem;
+		z-index: 1000;
+		margin-bottom: 1rem;
+		border-radius: 20px;
+		color: $color_level1;
+		background: $color_error;
+		margin-top: 1rem;
+	}
+	
+
+	.belowclick {
+		z-index: 1300;
+		position: fixed;
+	}
+
+	.transparent {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1300;
+	}
+
+	.info {
+		position: fixed;
+		top: 10px;
+		color: $color_level1;
+		background: $color_green_light;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 25vw;
+		min-height: 5vh;
+		border: 2px solid $color_green_light;
+		text-align: center;
+		z-index: 1400;
+		padding: 10px 0;
+	}
+
+	.error_smooth {
+		position: fixed;
+		top: 10px;
+		color: $color_level1;
+		background: $color_error;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 280px;
+		height: 80px;
+		text-align: center;
+		z-index: 1400;
+		padding: 10px;
+	}
+
+	.error {
+		position: fixed;
+		top: 30%;
+		color: $color_error;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		z-index: 1400;
+	}
+
+	.popup {
+		z-index: 1400;
+		background: #fff;
+		border-radius: 20px;
+		padding: 2rem;
+		//height: 100%;
+		position: relative;
+		min-height: 500px;
+		
+		.close {
+			position: absolute;
+			right: 1rem; top: .5rem;
+			z-index: 9999;
+			cursor: pointer;
+		}
+	}
+
+	&.h-100 .popup {
+		height: 100%;
+	}
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 1200;
+}
+
+@media screen and (max-width: 991px) {
+    .modal-container {
+
+		&.fixed {
+			padding: 1rem;
+		}
+
+		.popup {
+			padding: 1rem;
+		}
+	}
+}

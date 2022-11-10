@@ -1,0 +1,22 @@
+.section-template {
+	margin-bottom: 6rem;
+}
+/*
+li:last-child .section-template {
+	margin-bottom: 0;
+}
+*/
+.section-template__header {
+	font-size: 1.75rem;
+	font-weight: 400;
+}
+
+.section-template .section-template .section-template__header {
+	font-size: 1rem;
+}
+
+@media (max-width: 991px) {
+	.section-template {
+		margin-bottom: 3rem;
+	}
+}

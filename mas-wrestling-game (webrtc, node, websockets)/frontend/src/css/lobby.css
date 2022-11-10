@@ -1,0 +1,51 @@
+.lobby-ready-button {
+	.button {
+		display: none;
+
+		&.active {
+			display: inline-block;
+		}
+	}
+	.ready {
+		display: none;
+
+		&.active {
+			display: inline;
+		}
+	}
+
+	&.activated {
+		.button {
+			display: none;
+		}
+		.ready {
+			display: inline;
+		}
+	}
+}
+
+.section_lobby {
+	display: flex;
+}
+
+.section_lobby__player {
+	width: 50%;
+	position: relative;
+	text-align: center;
+
+	.content {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 0 2rem 0;
+	}
+}
+
+.lobby-ready-button {
+	min-height: 47px;
+}
+
+.hero-image {
+	width: 25%;
+}

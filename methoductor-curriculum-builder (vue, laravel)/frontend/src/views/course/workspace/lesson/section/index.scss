@@ -1,0 +1,11 @@
+.section-header {
+	font-weight: bold;
+}
+
+.section_deep {
+	margin-bottom: 3rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

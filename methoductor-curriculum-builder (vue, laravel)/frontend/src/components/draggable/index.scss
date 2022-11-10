@@ -1,0 +1,40 @@
+@import "@/assets/scss/variables";
+.ghost {
+	opacity: 0.5;
+	input {
+		background: #c8ebfb;
+	}
+}
+.draggable-container {
+	position: relative;
+
+	.drag, .delete {
+		position: absolute;
+		top: 0; bottom: 0;
+		width: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		opacity: 0;
+		transition: transform $transitionTime, opacity $transitionTime;
+
+		&:hover {
+			transform: scale(1.4);
+			opacity: 1!important;
+		}
+	}
+
+	&:hover .drag, &:hover .delete {
+		opacity: 0.5;
+	}
+
+	.drag {
+		right: 100%;
+		padding-right: 2rem;
+	}
+
+	.delete {
+		left: 99%;
+	}
+}

@@ -1,0 +1,48 @@
+@import "@/assets/scss/variables";
+
+i {
+	font-size: 40px;
+	border: 1px solid $color_white;
+	padding: 5px;
+}
+.button {
+    border: 1px solid;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background .25s, color .25s;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.parent {
+	width: 80vw;
+	margin: 20vh auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+}
+.text-field input {
+	max-width: 550px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.text-field {
+	max-width: 550px;
+	width: 80%;
+	position: relative;
+	margin-bottom: 20px;
+	text-align: center;
+}
+@media screen and (max-width: 991px) {
+	h1 {
+		text-align: center;
+		font-size: 24px;
+		margin: 5vh 0;
+	}
+	.parent {
+		margin: 2vh auto;
+		width: 90vw;
+	}
+}

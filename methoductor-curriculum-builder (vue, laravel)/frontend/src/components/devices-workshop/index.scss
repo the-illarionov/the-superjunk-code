@@ -1,0 +1,184 @@
+@import "@/assets/scss/variables";
+
+.drag-cover {
+	position: absolute;
+	left: 0; top: 0; right: 0; bottom: 0;
+	background: rgba(255,255,255,0.95);
+	animation-name: flashing;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+}
+
+.trash .drag-cover {
+	background-image: url('~@/assets/images/trash.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.blank {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+
+
+.devices-workshop {
+	height: 100%;
+	position: relative;
+	display: flex;
+	border-radius: 20px;
+	transition: background-color $transitionTime;
+
+	&.crafting {
+		background-color: #E2F8FF;
+	}
+}
+
+.trash,
+.limitation-warning,
+.add-device-menu {
+	height: 100%;
+	width: 25%;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.trash,
+.limitation-warning {
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	.trash__draggable {
+		width: 100%;
+		height: 100%;
+	}
+
+	.trash__text {
+		position: absolute;
+		top: 4rem;
+		left: 0; 
+		width: 100%;
+		z-index: 10;
+	}
+}
+
+.limitation-warning {
+	background: rgba(255,255,255,0.9);
+}
+
+.add-device-menu {
+	.menu {
+		height: 100%;
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding: 1rem ;
+		background: $backgroundGray;
+		height: 100%;
+	}
+}
+
+
+.displayed-device {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: left $transitionTime;
+}
+
+.workshop {
+	background: $backgroundGray;
+	z-index: 100;
+	padding: 2rem;
+
+	&.crafting {
+		//left: 25%;
+		//width: 30%;
+		background: rgba(0,0,0,0.035);
+		display: block;
+	}
+
+	.dragging-add {
+		position: absolute;
+		left: 0; top: 0; right: 0; bottom: 0;
+		z-index: 100;
+	
+		.text {
+			position: absolute;
+			left: 0; top: 0%; width: 100%; height: 100%;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			z-index: 10;
+			justify-content: center;
+			padding: 3rem;
+		}
+	}
+
+	.devices-draggable {
+		position: relative;
+		z-index: 200;
+		margin-bottom: 3rem;
+		padding-bottom: 3rem;
+	}
+
+	.devices-draggable, .draggable-component.no-items {
+		min-height: 300px;
+	}
+
+	.draggable-component .sortable-ghost {
+		z-index: 1000;
+		max-width: 100%!important;
+		flex-basis: 100%!important;
+		padding: 0!important;
+
+		.button {
+			padding: .5rem 1.25rem!important;
+		}
+	}
+
+	.draggable-component {
+		margin-bottom: 3rem;
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+	.ingredient {
+		padding-bottom: 2.5rem;
+		margin-bottom: 1rem;
+		background: center bottom no-repeat url('~@/assets/images/plus.png');
+	}
+
+	.devices-draggable.filled .ingredient:last-child {
+		padding: 0;
+		margin: 0;
+		background: none;
+	}
+
+	.workshop__result {
+		padding-top: 4.5rem;
+		background: center top no-repeat url('~@/assets/images/equal.png');
+		
+	}
+}
+
+.displayed-device {
+	left: 25%;
+	width: 75%;
+
+	&.crafting {
+		//left: 55%;
+		//width: 45%;
+	}
+}

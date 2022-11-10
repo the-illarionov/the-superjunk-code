@@ -1,0 +1,11 @@
+@import "@/assets/scss/variables";
+.unavailable {
+    text-align: center;
+    a {
+        text-decoration: none;
+        color: $color_level1;
+    }
+}
+@media screen and (max-width: 991px) {
+    
+}

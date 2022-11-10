@@ -1,0 +1,8 @@
+@import "@/assets/scss/variables";
+
+.parent {
+	width: 80vw;
+	margin: 10vh auto;
+	display: flex;
+	flex-flow: column;
+}

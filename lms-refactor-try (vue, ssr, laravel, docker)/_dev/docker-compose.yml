@@ -1,0 +1,73 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: node:18.1-alpine
+    working_dir: /home/node/app
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ../frontend:/home/node/app
+    networks:
+      - lms-starter-pack-network-dev
+    environment:
+      - LMS_PORT
+
+  backend:
+    build: ./backend
+    volumes:
+      - ../backend:/var/www
+    networks:
+      - lms-starter-pack-network-dev
+    environment:
+      - DB_DATABASE
+      - DB_PASSWORD
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.21.6-alpine
+    ports:
+      - "${LMS_PORT}:${LMS_NGINX_PORT}"
+    environment:
+      - LMS_HOSTNAME
+      - LMS_PORT
+    volumes:
+      - ./nginx/locations.locations:/etc/nginx/conf.d/locations.locations
+      - ./nginx/${LMS_NGINX_CONFIG}:/etc/nginx/templates/nginx.conf.template
+      - ./nginx/ssl:/etc/ssl
+    networks:
+      - lms-starter-pack-network-dev
+    depends_on:
+      - backend
+      - frontend
+      - adminer
+
+  db:
+    image: mariadb:10.8.2
+    volumes:
+      - lms-starter-pack-db-dev:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+      MARIADB_DATABASE: ${DB_DATABASE}
+    networks:
+      - lms-starter-pack-network-dev
+
+  adminer:
+    image: adminer:4.8.1-standalone
+    volumes:
+      - ./adminer/index.php:/var/www/html/index.php
+    environment:
+      - ADMINER_DEFAULT_SERVER=db
+      - ADMINER_USER=root
+      - DB_PASSWORD
+      - DB_DATABASE
+    networks:
+      - lms-starter-pack-network-dev
+    depends_on:
+      - db
+
+volumes:
+  lms-starter-pack-db-dev:
+
+networks:
+  lms-starter-pack-network-dev:

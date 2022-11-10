@@ -1,0 +1,27 @@
+@import "@/assets/scss/variables";
+
+input {
+	padding: .5rem;
+	font-size: inherit;
+	font-family: inherit;
+	border-radius: 20px;
+	border: 1px solid;
+	display: inline-block;
+	border: 1px solid $border_color;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.no-bg {
+		background: none;
+		border: none;
+		border-radius: 0;
+		padding: 0;
+	}
+
+	&.block {
+		display: block;
+		width: 100%;
+	}
+}

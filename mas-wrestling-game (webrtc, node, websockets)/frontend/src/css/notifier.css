@@ -1,0 +1,56 @@
+.notifier {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.9);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	color: #000;
+	text-shadow: none;
+
+	&.active {
+		display: flex;
+	}
+
+	.notifier__section {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	.winner {
+		display: none;
+
+		&.active {
+			display: inline;
+		}
+	}
+}
+
+.notifier__window {
+	width: 80%;
+	background: #fff;
+	border-radius: 1rem;
+	padding: 1rem;
+	position: relative;
+}
+
+.notifier__close {
+	position: absolute;
+	right: 0.5rem;
+	top: 0.5rem;
+	width: 1rem;
+	height: 1rem;
+	background: red;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}

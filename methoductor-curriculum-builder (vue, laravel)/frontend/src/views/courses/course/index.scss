@@ -1,0 +1,12 @@
+.card {
+	height: 100%;
+	padding: 1rem;
+}
+
+.actions {
+	position: absolute;
+	left: 1rem; right: 1rem;
+	bottom: .5rem;
+	display: flex;
+	justify-content: space-between;
+}

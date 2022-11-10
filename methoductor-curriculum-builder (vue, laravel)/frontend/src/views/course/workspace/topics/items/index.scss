@@ -1,0 +1,278 @@
+@import '@/views/course/workspace/variables';
+
+.select {
+	background: none;
+	border: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin: 0;
+	padding: 0 0 $gap;
+	height: 100%;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+/*
+.column-main > .row > .column > .row {
+	margin-bottom: $gap * 2;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+*/
+
+.item {
+	background: rgba(0,0,0,0.2);
+	width: $column;
+	min-width: $column;
+	margin-right: $gap;
+	border-radius: 20px;
+	position: relative;
+	padding: .5rem;
+	cursor: text;
+	transition: opacity .5s, border 1s, box-shadow .5s;
+	border: 5px solid rgba(0,0,0,0);
+
+	.text {
+		position: sticky;
+		top: 0;
+		align-items: flex-start;
+		justify-content: space-between;
+		//background: rgba(0,0,0,0.3);
+
+		.lessons-count {
+			font-size: .75rem;
+		}
+	}
+
+	.drag {
+		font-size: .75rem;
+	}
+
+	.action_left,
+	.action_right {
+		bottom: -10px;
+	}
+
+	.action_left {
+		left: -10px;
+	}
+
+	.action_right {
+		right: -10px;
+	}
+
+	.action_top {
+		margin-bottom: 5px;
+	}
+
+	.action_bottom {
+		margin-top: 5px;
+	}
+
+	&:hover {
+		z-index: 100;
+	}
+
+	.item__arrow {
+		position: absolute;
+		left: -20px;
+		top: 50%;
+		width: 12px;
+		height: 12px;
+		margin: -6px 0 0 0;
+		background: url('~@/assets/images/arrow-right.png');
+		background-size: 100% auto;
+		transition: opacity .3s;
+		opacity: 0.65;
+	}
+
+	&:hover .item__arrow {
+		opacity: 0;
+	}
+}
+
+.workspace__topics > .column > .row > .item > .item__arrow {
+	display: none;
+}
+
+.item-last {
+	background: rgba(0,0,0,0.05);
+}
+/*
+.column-main > .row > .item {
+	background: rgba(0,0,0,0.4);
+}
+*/
+.workspace__topics.highlighted .item {
+	opacity: 0.25;
+
+    &.highlighted {
+        opacity: 1;
+        border-color: rgba(0,0,0,0.05);
+    }
+}
+
+/*
+.column-main > .row > .item {
+	cursor: default;
+
+	.add-item,
+	.remove-item {
+		display: none;
+	}
+}
+
+
+.column
+.column .item {
+	background: rgba(0,0,0,0.2);
+}
+
+.column 
+.column 
+.column .item {
+	background: rgba(0,0,0,0.1);
+}
+*/
+
+/*
+.column_last {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1;
+	align-items: flex-start;
+	width: 35vw;
+	position: relative;
+
+	.row_last {
+		margin: 0 1rem .5rem 0;
+		padding: 0;
+		height: auto;
+		font-size: .75rem;
+	
+		.item {
+			margin: 0;
+			width: auto;
+			text-align: left;
+			padding: .5rem .75rem;
+			max-width: 300px;
+			background: rgba(0,0,0,0.03)!important;
+	
+			.lessons-count {
+				margin-left: .5rem;
+				cursor: default;
+			}
+			
+			.action_top,
+			.action_bottom {
+				bottom: auto;
+				left: auto;
+				right: auto;
+				top: 50%;
+				width: 20px;
+				height: 40px;
+				margin: -15px 0 0;
+				align-items: center;
+	
+				i {
+					left: auto;
+					right: auto;
+					top: 50%;
+					margin: -.5rem 0 0;
+				}
+			}
+	
+			.action_top {
+				right: 100%;
+			}
+	
+			.action_bottom {
+				left: 100%;
+			}
+	
+			.action_right,
+			.action_left {
+				left: 50%;
+				width: 40px;
+				margin: -3px 0 0 -20px;
+			}
+	
+			.action_right {
+				top: 100%;
+				align-items: flex-start;
+				transform: translate3d(0,-50%,0) scale(0.5);
+			}
+	
+			.action_left {
+				bottom: 100%;
+				align-items: flex-end;
+				transform: translate3d(0,50%,0) scale(0.5);
+			}
+		}
+	}
+}
+
+
+
+.add-item-solo-container {
+	width: $column;
+	align-items: center;
+	display: flex;
+	height: 100%;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity .35s;
+	cursor: pointer;
+}
+
+.row_last:hover > .add-item-solo-container {
+	z-index: 10;
+	opacity: 1;
+}
+
+.column_last .row_last .add-item-solo-container {
+	display: none;
+}
+*/
+
+@media screen and (max-width: 1450px) {
+    .item {
+		width: $column_notebook;
+		min-width: $column_notebook;
+	}
+
+	/*
+	.column_last {
+		max-width: 90vw;
+	}
+	*/
+}
+
+@media screen and (max-width: 991px) {
+    .item {
+		width: $column_mobile;
+		min-width: $column_mobile;
+	}
+
+	/*
+	.column_last {
+		max-width: 90vw;
+	}
+	*/
+}

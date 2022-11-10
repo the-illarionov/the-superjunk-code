@@ -1,0 +1,54 @@
+@import '@/views/course/workspace/variables';
+@import '../index';
+
+.workspace__topics {
+	padding: 0 1rem 30px;
+	//z-index: 110;
+}
+
+
+/*
+.topics__headers {
+	display: flex;
+	margin: 0 0 1rem;
+	position: sticky;
+	background: #fff;
+	top: -2rem;
+	z-index: 10000;
+}
+
+.topics__header,
+.bottom__section {
+	width: $column;
+	margin-left: $gap;
+	position: relative;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.bottom {
+	display: flex;
+	padding: 1rem 0 0;
+
+	.bottom__section {
+		text-align: center;
+
+		&:last-child {
+			text-align: left;
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.topics__headers {
+		top: -3rem;
+	}
+
+    .topics__header,
+	.bottom__section {
+		width: $column_mobile!important;
+	}
+}
+*/

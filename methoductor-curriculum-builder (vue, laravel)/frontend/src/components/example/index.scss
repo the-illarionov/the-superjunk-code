@@ -1,0 +1,24 @@
+@import "@/assets/scss/variables";
+
+.examples {
+	text-align: left;
+	//padding-top: $padding_1;
+
+	.example__bad {
+		
+		.title {
+			color: $color_error_accent;
+		}
+	}
+
+	.example__good {
+		
+		.title {
+			color: $color_green;
+		}
+	}
+
+	.title {
+		margin-bottom: 0;
+	}
+}

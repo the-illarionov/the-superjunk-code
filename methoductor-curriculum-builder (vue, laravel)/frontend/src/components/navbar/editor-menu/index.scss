@@ -1,0 +1,50 @@
+.menu-list {
+	display: flex;
+	font-size: .8rem;
+	overflow-x: auto;
+
+	li {
+		padding-left: 3rem;
+		background: url('~@/assets/images/arrow-right.png') 15px center no-repeat;
+		white-space: nowrap;
+	}
+
+	> li:first-child {
+		padding-left: 0;
+	}
+}
+
+.header {
+	position: absolute;
+	left: 1rem;
+	top: 105px;
+}
+
+.button {
+	text-align: left!important;
+	justify-content: left!important;
+}
+
+.arrows {
+	font-size: 1.5rem;
+
+	i {
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 991px) {
+    .menu-list {
+		flex-wrap: wrap;
+
+		li {
+			margin-bottom: 1.5rem;
+			padding-left: 0;
+			width: 100%;
+		}
+	}
+
+	.arrows {
+		display: none;
+	}
+}

@@ -1,0 +1,187 @@
+@import "@/assets/scss/variables";
+
+.header {
+	display: flex;
+	padding: 0 2rem;
+	margin: 0 0 .5rem;
+}
+/*
+.lessons__module > .header,
+.lessons__sprint > .header {
+	width: 60%;
+}
+*/
+
+
+.lessons__module {
+	margin: 0 0 3rem -2rem;
+	/*
+	background: $backgroundGray;
+	border-radius: 20px;
+	margin-bottom: 3rem;
+	padding: 1rem 0;
+	*/
+	> .header {	
+		margin-bottom: 3rem;
+		display: block;
+
+		.count {
+			font-size: 1rem;
+		}
+	}
+}
+
+.lessons__sprint {
+	margin-bottom: 1rem;
+
+	.row {
+		margin: 0;
+		padding: 0 2rem 0 3rem;
+		/*
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		*/
+	}
+
+	.add-lesson {
+		height: 100px;
+		display: flex;
+		width: 30%;
+		align-items: center;
+		justify-content: center;
+		margin: 0 0 0 2rem;
+		cursor: pointer;
+	}
+}
+
+.lessons__lesson-wrapper {
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+	padding: 0 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+/*
+.expanded .lessons__lesson-wrapper {
+	flex: 0 0 16.665%;
+	max-width: 16.665%;
+}
+*/
+
+.lessons__lesson {
+	padding: 1rem;
+	background: rgba(0,0,0,0.085);
+	border-radius: 20px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	transition: opacity .5s;
+
+	:hover {
+		z-index: 100;
+	}
+
+	.action_left,
+	.action_right { bottom: -5px; }
+
+	.action_left { left: -5px; }
+
+	.action_right { right: -5px; }
+
+	.drag { font-size: .75rem; }
+
+	.header {
+		padding: 0;
+		display: block;
+		transition: opacity .5s;
+		cursor: default;
+	}
+
+	.actions {
+		margin-bottom: 1rem;
+	}
+}
+
+.workspace__lessons.highlighted .lessons__lesson {
+    opacity: 0.25;
+
+    &.highlighted,
+	&.highlighted_lesson {
+        opacity: 1;
+    }
+}
+
+.lesson__skills-container {
+	border-radius: 20px;
+	min-height: 0;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
+	font-size: .75rem;
+	transition: min-height .5s, opacity .5s;
+	position: relative;
+	flex: 1;
+
+	.lesson__skill_blank-text {
+		position: absolute;
+		left: 1rem; top: 50%; right: 1rem;
+		text-align: center;
+		margin-top: -1rem;
+		display: none;
+		color: rgba(0,0,0,0.5);
+	}
+
+	&.lesson__skills-blank {
+		min-height: 100px;
+		border: 5px dashed rgba(0,0,0,0.1);
+
+		.lesson__skill_blank-text {
+			display: block;
+		}
+	}
+
+	.lesson__skill {
+		padding: 0.5rem 0.75rem;
+		border-radius: 20px;
+		position: relative;
+		margin: 0 .5rem .5rem 0;
+		border: 5px solid rgba(0,0,0,.05);
+		transition: opacity .5s, transform .5s, border-color .5s;
+		width: 100%;
+		cursor: default;
+
+		&.highlighted {
+			border-color: rgba(0,0,0,.15);
+		}
+
+		.steps-count {
+			font-size: .75em;
+		}
+	}
+}
+
+.workspace__lessons.highlighted .lesson__skill {
+    opacity: 0.25;
+
+    &.highlighted {
+        opacity: 1;
+    }
+}
+
+.workspace__lessons.highlighted .lessons__lesson.highlighted_lesson .lesson__skill {
+	opacity: 1;
+}
+
+@media screen and (max-width: 991px) {
+	.lessons__lesson-wrapper {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.lessons__module > .header,
+	.lessons__sprint > .header {
+		width: 100%;
+	}
+}

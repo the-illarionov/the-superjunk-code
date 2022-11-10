@@ -1,0 +1,54 @@
+.messenger-highlight-active,
+.workspace-messenger-highlighted-open-lesson .messenger-highlight-open-lesson.messenger-highlight-active > .edit {
+    opacity: 1!important;
+	box-shadow: 0 0 0 5px #90c9f9;	
+}
+
+.workspace-messenger-highlighted-open-lesson .messenger-highlight-open-lesson.messenger-highlight-active > .edit {
+	border-radius: 20px;
+}
+
+.messenger-highlight-active {
+	&.lesson__skills-container.lesson__skills-blank {
+		box-shadow: none;
+		border-color: #90c9f9!important;
+	}
+
+	&.lessons__lesson.messenger-highlight-drag-skills-to-lessons {
+		box-shadow: none;
+	}
+}
+
+.workspace-messenger-highlighted .workspace__topics .item,
+.workspace-messenger-highlighted .workspace__topics .item,
+.workspace-messenger-highlighted .workspace__topics .item,
+.workspace-messenger-highlighted .workspace__topics .item,
+.workspace-messenger-highlighted-add-states #workspace__topics__section > .header-2,
+.workspace-messenger-highlighted-combine-lessons #workspace__topics__section > .header-2,
+.workspace-messenger-highlighted-auto-generation #workspace__topics__section > .header-2,
+
+.workspace-messenger-highlighted .workspace__lessons .lessons__lesson,
+.workspace-messenger-highlighted .workspace__lessons .header,
+.workspace-messenger-highlighted .workspace__lessons .button,
+.workspace-messenger-highlighted .workspace__lessons .select-state,
+.workspace-messenger-highlighted .workspace__lessons .lesson__skills-container,
+.workspace-messenger-highlighted-combine-lessons .lessons__sprint,
+.workspace-messenger-highlighted-open-lesson #workspace__lessons__section > .header {
+	opacity: 0.25;
+}
+
+.workspace-messenger-highlighted-open-lesson .messenger-highlight-open-lesson.messenger-highlight-active > .action_left,
+.workspace-messenger-highlighted-open-lesson .messenger-highlight-open-lesson.messenger-highlight-active > .action_right,
+.workspace-messenger-highlighted-open-lesson .messenger-highlight-open-lesson.messenger-highlight-active > .action_top,
+.workspace-messenger-highlighted-open-lesson .messenger-highlight-open-lesson.messenger-highlight-active > .action_bottom {
+	transform: translate3d(0,0,0) scale(1)!important;
+	opacity: .25;
+}
+
+.workspace-messenger-highlighted-combine-lessons .lessons__sprint.messenger-highlight-active .lessons__lesson,
+.workspace-messenger-highlighted-combine-lessons .lessons__sprint.messenger-highlight-active .header,
+.workspace-messenger-highlighted-combine-lessons .lessons__sprint.messenger-highlight-active .select-state,
+.workspace-messenger-highlighted-combine-lessons .lessons__sprint.messenger-highlight-active .lesson__skills-container {
+	opacity: 1;
+}
+

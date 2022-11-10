@@ -1,0 +1,26 @@
+{
+  "vite/modulepreload-polyfill": [],
+  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "node_modules/pinia/node_modules/vue-demi/lib/index.mjs": [],
+  "node_modules/pinia/dist/pinia.esm-browser.js": [],
+  "node_modules/vue-router/dist/vue-router.esm-bundler.js": [],
+  "src/App.vue?vue&type=style&index=0&lang.css": [],
+  "src/App.vue": [],
+  "vite/preload-helper": [],
+  "src/router/routes.js": [],
+  "src/router/index.js": [],
+  "src/main.ts": [],
+  "index.html": [],
+  "src/pages/index/PageIndex.vue": [
+    "/assets/PageIndex.c1139106.js"
+  ],
+  "plugin-vue:export-helper": [
+    "/assets/plugin-vue_export-helper.21dcd24c.js"
+  ],
+  "src/pages/about/PageAbout.vue": [
+    "/assets/PageAbout.bce89e6b.js"
+  ]
+}

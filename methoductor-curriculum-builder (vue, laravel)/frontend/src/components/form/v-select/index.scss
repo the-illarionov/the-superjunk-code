@@ -1,0 +1,20 @@
+@import "@/assets/scss/variables";
+
+select {
+	display: block;
+	width: 100%;
+	padding: .5rem;
+	/*
+	background: $color_level10;
+	color: $color_white;
+	border: 1px solid $color_white;
+	*/
+
+	option {
+		padding: .5rem;
+
+		&[disabled] {
+			color: $color_disabled;
+		}
+	}
+}

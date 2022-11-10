@@ -1,0 +1,203 @@
+@import "@/assets/scss/variables";
+
+.flip-list-move {
+	transition: transform 0.5s;
+}
+.flip-list-enter-active, .flip-list-leave-active {
+	transition: all 0.7s ease;
+}
+.flip-list-enter, .flip-list-enter-from, .flip-list-leave-to {
+	opacity: 0;
+	transform: translateX(30px);
+}
+
+.top-to-bottom-enter-active {
+	animation: top-to-bottom $animationTime;
+}
+.top-to-bottom-leave-active {
+	animation: top-to-bottom $animationTime reverse;
+}
+.bottom-to-top-enter-active {
+	animation: bottom-to-top $animationTime;
+}
+.bottom-to-top-leave-active {
+	animation: top-to-bottom $animationTime reverse;
+}
+
+@keyframes top-to-bottom {
+	0% {
+		transform: translate3d(0, -$animationInitialValue, 0);
+  		opacity: 0;
+	}
+	70% {
+		transform: translate3d(0, $animationBounceBorder, 0);
+	}
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+@keyframes bottom-to-top {
+	0% {
+		transform: translate3d(0, $animationInitialValue, 0);
+  		opacity: 0;
+	}
+	70% {
+		transform: translate3d(0, -$animationBounceBorder, 0);
+	}
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+
+
+.fade-enter-active, .fade-leave-active {
+	transition: opacity $transitionTime;
+}
+
+.fade-enter-from, .fade-leave-to {
+	opacity: 0;
+}
+
+.fade-preloader-leave-active {
+	transition: opacity $transitionTime;
+}
+
+.fade-preloader-enter-from, .fade-preloader-leave-to {
+	opacity: 0;
+}
+
+
+
+
+
+.pop-enter-active, .pop-leave-active {
+	transition: transform $animationTime cubic-bezier(0.68, 0.35, 0.41, 1.26), opacity $animationTime;
+}
+
+.pop-enter, .pop-leave-to {
+	opacity: 0;
+	transform: scale(0);
+}
+
+
+
+
+
+
+
+.rotate-forward-enter-active {
+	transform-origin:  50% 50%;
+	animation: rotate-forward $animationTime;
+}
+.rotate-forward-leave-active {
+	animation: rotate-backward $animationTime reverse;
+	transform-origin: 50% 50%;
+}
+
+@keyframes rotate-forward {
+	0% {
+		transform: rotateX(-90deg);
+	}
+	70% {
+		transform: rotateX(30deg);
+	}
+	100% {
+		transform: rotateX(0);
+		
+	}
+}
+@keyframes rotate-backward {
+	0% {
+		transform: rotateX(90deg);
+  		opacity: 0;
+	}
+	70% {
+		transform: rotateX(-30deg);
+	}
+	100% {
+		transform:  rotateX(0);
+		opacity: 1;
+	}
+}
+
+.left-to-right-enter-active {
+	animation: left-to-right $animationTime;
+	
+}
+.left-to-right-leave-active {
+	animation: right-to-left $animationTime;
+	position: absolute!important;
+	top: 0; width: 100%;
+}
+
+@keyframes left-to-right {
+	0% {
+		transform: translate3d(-5%, 0, 0);
+  		opacity: 0;
+	}
+	/*
+	50% {
+		transform: translate3d($animationBounceBorder, 0, 0);
+		opacity: 0.3;
+	}
+	*/
+	100% {
+		transform: translate3d(0, 0, 0) ;
+		opacity: 1;
+	}
+	
+}
+@keyframes right-to-left {
+	
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+	/*
+	50% {
+		transform: translate3d(-$animationBounceBorder, 0, 0);
+		opacity: 0.3;
+	}
+	*/
+	100% {
+		transform: translate3d(5%, 0, 0);
+		opacity: 0;
+	}
+	
+}
+
+.flip-enter-active {
+animation: flip .2s;
+}
+
+.flip-leave-active {
+animation: flip .2s reverse;
+}
+
+@keyframes flip {
+	0% {
+		transform: scaleX(0);
+	}
+
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+
+
+
+@keyframes flashing {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1;
+	}
+}

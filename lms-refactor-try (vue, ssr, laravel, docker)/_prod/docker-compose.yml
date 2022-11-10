@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:1.21.6-alpine
+    ports:
+      - "443:443" # надо будет сделать 80, убрать default.conf
+    volumes:
+      - ../frontend/dist:/var/www/html # надо будет без volume, в dockerfile как раз multistage сначала копирует, потом удаляет, оставляет только dist
+      # ещё gzip и всякое добавить - кароч почитать типа guide, tips for production nginx config
+      - ../_prod/nginx/site.conf:/etc/nginx/conf.d/site.conf
+      - ../_dev/nginx/ssl:/etc/ssl # в идеале тоже как-то автоматически генерится как в ранклауде
+    networks:
+      - lms-starter-pack-network-prod
+
+  vite-build: # этого получается тоже не будет уже, сразу в nginx dockerfile build будет
+    image: node:18.1-alpine
+    user: root
+    working_dir: /home/node/app
+    command: sh -c "chmod -R 777 . && npm install && npm run build:client && npm run build:render && npm run build:ssg" # проблему с пользователем надо нормально решить, разобраться вообще с правами, юзером и тд
+    # плюс почему-то npm run build не работает, тоже права видимо
+    volumes:
+      - ../frontend:/home/node/app
+      
+
+networks:
+  lms-starter-pack-network-prod:

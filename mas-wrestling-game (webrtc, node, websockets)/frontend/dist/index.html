@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="shortcut icon"
+			href="https://illarionov.school/favicon.ico"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Мас-Рестлинг: Слова! IT-школа Алексея Илларионова</title>
+		<script type="module" crossorigin src="/assets/index.d6f6ac29.js"></script>
+		<link rel="stylesheet" href="/assets/index.af888fd2.css">
+	</head>
+	<body>
+		<div class="section section_main-menu">
+			<div class="logo">
+				<img src="/game-assets/img/logo.png" />
+			</div>
+			<div class="buttons">
+				<div>
+					<!-- Введите ваше имя:<input /><br />
+				Язык:
+				<select>
+					<option>Сахалыы</option>
+					<option>Русский</option>
+				</select>
+				<br /><br />
+				<a href="#practice">practice</a><br /> -->
+
+					<a href="#create-game" class="button block mb-1"
+						>Пригласить друга<i></i
+					></a>
+					<a href="#join-game" class="button block mb-1"
+						>Присоединиться к игре<i></i
+					></a>
+				</div>
+				<!-- <button onclick="localStorage.clear()">clear</button><br /> -->
+			</div>
+		</div>
+		<div class="section section_lobby">
+			<div class="section_lobby__player">
+				<div class="content">
+					<p>
+						Алексей Елисеевич Кулаковский - великий мыслитель народа
+						саха, первый якутский поэт, писатель-провидец. Провел
+						всю жизнь в странствиях, в поисках народного слова.
+						Участвовал в создании якутского алфавита. Автор таких
+						произведений как "Ойуун туулэ" и "Письма якутской
+						интеллигенции", которые актуальны и по сей день.
+					</p>
+					<img
+						src="/game-assets/img/kulakovskiy.png"
+						class="hero-image"
+					/><br />
+					<div class="lobby-ready-button py-2" data-type="host">
+						<span class="button">
+							Нажмите, чтобы подтвердить готовность
+
+							<i></i
+						></span>
+						<span class="ready">Ждем соперника...</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_lobby__player">
+				<div class="content">
+					<p>
+						Платон Алексеевич Ойунский всю свою жизнь посвятил
+						борьбе за счастье родного народа. Его активная
+						общественная и литературная деятельность была яркой
+						вспышкой в истории Якутии. Он популяризировал олонхо,
+						первым подготовил к изданию "Ньургун Боотур". Являлся
+						одним из инициаторов создания Якутской АССР.
+					</p>
+					<img
+						src="/game-assets/img/oiunskiy.png"
+						class="hero-image"
+					/><br />
+					<div class="lobby-ready-button py-2" data-type="client">
+						<span class="button">
+							Нажмите, чтобы подтвердить готовность
+
+							<i></i
+						></span>
+						<span class="ready">Ждем соперника...</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section_game">
+			<span class="round-timer" style="display: none">99</span>
+			<div class="player" data-type="host">
+				<span class="nickname">Кулаковский</span>
+				<ul class="word-list"></ul>
+				<div class="stamina">
+					<i class="stamina__indicator"></i>
+				</div>
+			</div>
+			<div class="player" data-type="client">
+				<span class="nickname">Ойунский</span>
+				<ul class="word-list"></ul>
+				<div class="stamina">
+					<i class="stamina__indicator"></i>
+				</div>
+			</div>
+			<div class="wrestlers">
+				<img src="/game-assets/img/draw.png" class="wrestlers-img" />
+			</div>
+			<div class="main-word">
+				<span class="main-word__action" data-type="delete"></span>
+				<span class="main-word__action" data-type="confirm"></span>
+
+				<div class="main-word__letters">
+					&nbsp;<span class="main-word__letter">a</span
+					><span class="main-word__letter">s</span>
+				</div>
+
+				<div class="user-word">&nbsp;</div>
+
+				<span class="refresh-word-info"
+					>Слово обновится через
+					<span class="refresh-word-info__timer">15</span> с.</span
+				>
+			</div>
+		</div>
+
+		<div class="notifier">
+			<div class="notifier__window">
+				<div class="notifier__section" data-type="create-game">
+					<p>ID вашей игры: <span id="game-id"></span></p>
+					<p>
+						<a
+							href=""
+							class="copy-invitation mobile button"
+							data-action="share/whatsapp/share"
+							>Отправить приглашение в WhatsApp<i></i
+						></a>
+						<span class="copy-invitation desktop button"
+							>Скопировать приглашение<i></i
+						></span>
+						<span class="invitation-copied" style="display: none"
+							>Ссылка скопирована в буфер обмена!</span
+						>
+					</p>
+					<p class="invitation-wait" style="display: none">
+						Ждем, когда игрок подключится...
+					</p>
+				</div>
+				<div class="notifier__section" data-type="join-game">
+					Введите ID игры: <input type="text" id="room-id-join" />
+					<span class="button" id="join-room"
+						>Подключиться<i></i
+					></span>
+				</div>
+
+				<div class="notifier__section" data-type="game-over">
+					<p>
+						Победил
+						<span class="winner" data-type="host"
+							>Кулаковский!</span
+						>
+						<span class="winner" data-type="client">Ойунский!</span>
+					</p>
+					<p>
+						Хотите реванш?
+						<button class="confirm-rematch">Да</button>
+					</p>
+					<p>
+						Или можете <a href="/game">вернуться в главное меню</a>.
+					</p>
+					<p style="padding-top: 2rem">
+						Кстати, мы, IT-школа Илларионова, заканчиваем набор
+						учеников на новый учебный год на курсы программирования
+						и графики, успевайте! Подробности на
+						<a href="#">главной странице</a>.
+					</p>
+				</div>
+
+				<span class="notifier__close"></span>
+			</div>
+		</div>
+
+		<div
+			style="
+				padding-top: 100px;
+				z-index: 100;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				max-height: 50vh;
+				overflow: auto;
+				display: none;
+			"
+		>
+			<div style="background: grey" id="log"></div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,30 @@
+.content-editable {
+	display: block;
+	min-height: 1rem;
+	min-width: 2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	outline: none;
+	cursor: text;
+	/*
+	position: sticky;
+	top: 0;
+	*/
+
+	&[placeholder]:not(:focus):empty:before{
+		content: attr(placeholder);
+		pointer-events: none;
+		display: block;
+		color: rgb(104, 104, 104);
+	}
+
+	&.inline {
+		display: inline;
+		margin-left: .25rem;
+
+		&[placeholder]:not(:focus):empty:before {
+			display: inline;
+		}
+	}
+}

@@ -1,0 +1,18 @@
+[contenteditable] {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		height: 20px;
+		width: 20px;
+		background: gray;
+		left: 100%;
+		top: 0;
+		transition: opacity 0.3s;
+	}
+
+	&:focus::after {
+		opacity: 0;
+	}
+}

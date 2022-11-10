@@ -1,0 +1,258 @@
+@import "@/assets/scss/variables";
+
+.section-container {
+    background: rgb(245, 245, 245);
+    padding-bottom: 3rem;
+}
+
+.section {
+    min-height: 75vh;
+    width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 2rem 0 0;
+    text-align: center;
+
+    &.section_center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
+.feature-container {
+    display: flex;
+    text-align: left;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: row;
+
+    &.reversed {
+        flex-direction: row-reverse;
+    }
+}
+
+.pricing {
+    width: 100%;
+
+    .column-text {
+        width: 40%;
+    }
+
+    .column-info {
+        width: 20%;
+    }
+
+    td {
+        padding: 1rem .5rem;
+    }
+
+    tr:nth-child(odd) {
+        background: rgba(0,0,0,0.05);
+    }
+}
+
+.spacer {
+    height: 50px;
+}
+
+@media (max-width: 1390px) {
+    .section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .feature-container {
+        flex-direction: column;
+        text-align: center;
+
+        &.reversed {
+            flex-direction: column;
+        }
+    }
+
+    .pricing {
+        font-size: 12px;
+    }
+}
+/*
+.welcome {
+    width: 70vw;
+    height: 80vh;
+    padding: 0 1rem;
+    margin: 0 15vw 10vw 15vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+}
+.header {
+    width: 90vw;
+    margin: 2vh auto;
+    text-align: center;
+    h2 {
+        font-size: 52px;
+    }
+}
+.card-tabs {
+    .card {
+        margin: 12vh auto;
+        width: 70vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 70vh;
+        .text {
+            div {
+                padding: 20px;
+                border-radius: 15px;
+                cursor: pointer;
+                transition: background-color .5s linear;
+            }
+            .active {
+                background-color: $color_blue_light;
+            }
+            h3 {
+                font-size: 36px;
+                font-family: 'Montserrat';
+                font-weight: bold;
+            }
+        }
+        .img {
+            max-height: 70vh;
+            img {
+                max-width: 100%;
+                max-height: 70vh;
+                border: 1px solid $border_color;
+            }
+        }
+    }
+}
+.tryout {
+    text-align: center;
+}
+
+.video {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.pricing {
+    width: 68vw;
+    margin: 0 auto;
+    .active {
+        background: $color_grey_light;
+    }
+    tr {
+        height: 7vh;
+        padding: 2vh;
+        td {
+            width: 17vw;
+            text-align: center;
+            img {
+                height: 2vh;
+            }
+        }
+    }
+}
+.custom-spacer {
+    height: 15vh;
+}
+.footer {
+    width: 68vw;
+    margin: 0 auto;
+    padding: 5rem 0px;
+    .skeleton {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    .social {
+        a {
+            color: #000;
+        }
+        i {
+            font-size: 25px;
+            vertical-align: middle;
+        }
+    }
+}
+.small-spacer {
+    height: 10vh;
+}
+
+@media screen and (max-width: 991px) {
+    .mart-5-mob {
+        margin-top: 5vh;
+    }
+    .welcome {
+        width: 100vw;
+        height: 90vh;
+        text-align: center;
+        margin: 0;
+        padding-top: 10vh;
+        h1 {
+            margin: 7vh auto;
+            width: 90vw;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 24px;
+        }
+        div {
+            font-size: 12px;
+        }
+    }
+
+    .header {
+        width: 80vw;
+        margin: 2vh auto;
+        text-align: center;
+        h2 {
+            font-size: 18px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    
+    .card-tabs {
+        margin: 12vh auto;
+        .card {
+            margin: 12vh auto;
+            width: 80vw;
+            display: block;
+            height: 120vh;
+            .text {
+                div {
+                    padding: 20px;
+                    border-radius: 15px;
+                    cursor: pointer;
+                    transition: background-color .5s linear, display .5s linear;
+                }
+                h3 {
+                    font-size: 16px;
+                }
+                div {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .video {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    .pricing {
+        width: 100vw;
+        h4 {
+            font-size: 11px;
+        }
+        tr {
+            td {
+                width: 25vw;
+                font-size: 10px;
+            }
+        }
+    }
+}
+*/

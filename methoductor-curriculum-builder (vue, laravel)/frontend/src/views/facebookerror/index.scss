@@ -1,0 +1,10 @@
+@import "@/assets/scss/variables";
+
+.parent {
+	width: 80vw;
+	margin: 20vh auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+}

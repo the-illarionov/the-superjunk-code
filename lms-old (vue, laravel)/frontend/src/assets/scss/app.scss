@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@import "animations";
+	@import "variables";
+	@import "typography";
+	@import "skeleton";
+	@import "contenteditable";
+}
+
+html,
+body,
+#app {
+	height: 100%;
+	font-family: "Montserrat";
+}
+
+a {
+	text-decoration: underline;
+}

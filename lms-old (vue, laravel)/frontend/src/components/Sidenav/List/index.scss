@@ -1,0 +1,36 @@
+.list {
+	display: none;
+
+	.list-item {
+		padding-left: 10px;
+	}
+
+	.list-link-container {
+		display: flex;
+		align-items: flex-start;
+
+		.list-link {
+			flex: 1;
+
+			&.active {
+				background: blue;
+			}
+		}
+
+		.expander {
+			transition: transform 0.3s;
+			width: 20px;
+			height: 20px;
+			background: orange;
+		}
+	}
+}
+
+.list-item.active > .list {
+	display: block;
+}
+
+.list-item.active > .list-link-container > .expander {
+	transform: rotate(90deg);
+	background: purple;
+}

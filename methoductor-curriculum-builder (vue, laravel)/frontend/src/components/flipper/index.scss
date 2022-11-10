@@ -1,0 +1,36 @@
+@import "@/assets/scss/variables";
+
+.flipper {
+	perspective: 1000px;
+	transition: height .5s;
+	margin-bottom: 1rem;
+
+	.flipper__container {
+		position: relative;
+		transform-style: preserve-3d;
+		transition: transform .9s cubic-bezier(.94,-0.46,.4,1.48);
+
+		&.flipped {
+			transform: rotateY(180deg);
+		}
+	}
+
+	.flipper__front,
+	.flipper__back {
+		position: absolute;
+		left: 0; top: 0; 
+		width: 100%;
+		backface-visibility: hidden;
+		transform: rotateY(0deg);
+		z-index: 10;
+	}
+
+	.flipper__back {
+		transform: rotateY(180deg);
+		z-index: 1;
+	}
+
+	.flipper__button {
+		
+	}
+}

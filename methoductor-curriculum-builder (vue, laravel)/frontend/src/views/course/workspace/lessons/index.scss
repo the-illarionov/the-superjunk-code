@@ -1,0 +1,11 @@
+.workspace__lessons {
+	position: relative;
+	padding: 0 1rem 0 2rem;
+	width: 98vw;
+}
+
+@media screen and (max-width: 991px) {
+	.workspace__lessons {
+		padding-left: 1rem;
+	}
+}

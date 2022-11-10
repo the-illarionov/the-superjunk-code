@@ -1,0 +1,15 @@
+@import "@/assets/scss/variables";
+
+.card {
+	@include card-and-button;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	background: $backgroundGray;
+
+	.close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+	}
+}

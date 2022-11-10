@@ -1,0 +1,110 @@
+@import '@/assets/scss/variables';
+
+.messenger {
+	font-size: .75rem;
+	background: #f2f2f2;
+	box-shadow: 0 0 10px #ccc;
+	border: 5px solid #90c9f9;
+	border-radius: 20px;
+	padding: .5rem 0;
+
+	position: fixed;
+	bottom: 1rem;
+	right: 2rem;
+	width: 30%;
+	//top: 80px;
+	//top: 50%;
+	max-height: 90vh;
+	max-height: calc(100vh - 100px);
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 1rem;
+
+	z-index: 1000;
+	opacity: 0;
+	transform: translate3d(110%, 0, 0);
+	transition: transform .5s, opacity .75s;
+
+	.messages-container {
+		height: 100%;
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding: 0 .5rem;
+
+		.message {
+			background: #fff;
+			border-radius: 20px;
+			padding: 1rem;
+			margin-bottom: 1rem;
+			//margin: 5px;
+		}
+	}
+
+	.close {
+		position: absolute;
+		right: 1rem; top: .5rem;
+	}
+
+	&.visible {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.tags {
+	span {
+		margin-right: 10px;
+	}
+	.active {
+		color: #f00;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+    .messenger {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 991px) {
+    .messenger {
+		width: auto;
+		top: auto;
+		left: 1rem;
+		height: 30%;
+		right: 1rem;
+		bottom: .5rem;
+	}
+}
+
+
+/*
+@media screen and (max-width: 1920px) {
+    .messenger {
+		width: 300px;
+		height: 500px;
+
+		.messages-container {
+			height: 400px;
+		}
+	}
+}
+
+@media screen and (max-height: 800px) {
+    .messenger {
+		right: 10px;
+		width: 300px;
+		height: 400px;
+
+		.messages-container {
+			height: 350px;
+		}
+	}
+}
+
+
+*/

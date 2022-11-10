@@ -1,0 +1,16 @@
+@import "@/assets/scss/variables";
+
+textarea {
+	display: block;
+	width: 100%;
+	padding: .5rem;
+	font-size: inherit;
+	font-family: inherit;
+	height: 10rem;
+	border-radius: 20px;
+	border: 1px solid $border_color;
+
+	&:focus {
+		outline: none;
+	}
+}

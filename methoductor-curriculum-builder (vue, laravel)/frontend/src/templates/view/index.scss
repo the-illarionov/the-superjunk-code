@@ -1,0 +1,18 @@
+@import "@/assets/scss/variables";
+
+.view {
+	//min-height: 100%;
+	//display: flex;
+	padding: $padding_1;
+	padding-top: 5rem;
+
+	&.view_center {
+		align-items: center;
+		//justify-content: center;
+		//text-align: center;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	
+}
